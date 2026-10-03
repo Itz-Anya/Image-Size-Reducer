@@ -4,6 +4,8 @@
   import { Github, Moon, Sun } from 'lucide-svelte';
   let { children } = $props();
   const REPO = 'https://github.com/Itz-Anya/Image-Size-Reducer';
+  const TITLE = 'Image Size Reducer - Free Online Image Compressor';
+  const DESC = 'Compress multiple images for free directly in your browser. Reduce image file sizes, compare quality, and download optimized images securely without uploading files.';
   let dark = $state(browser && document.documentElement.classList.contains('dark'));
   function toggle() {
     dark = !dark;
@@ -13,12 +15,38 @@
 </script>
 
 <svelte:head>
-  <title>Image Size Reducer - Free Online Image Compressor</title>
-  <meta name="description" content="Compress multiple images for free directly in your browser. Reduce image file sizes, compare quality, and download optimized images securely without uploading files." />
-  <meta property="og:title" content="Image Size Reducer - Free Online Image Compressor" />
-  <meta property="og:description" content="Compress multiple images for free directly in your browser. Reduce image file sizes, compare quality, and download optimized images securely without uploading files." />
-  <meta property="og:image" content="/logo.png" />
+  <title>{TITLE}</title>
+  <meta name="title" content={TITLE} />
+  <meta name="description" content={DESC} />
+  <meta name="keywords" content="image compressor, image size reducer, compress images online, reduce image size, batch image compression, JPEG compressor, PNG compressor, WebP converter, client-side image compression, private image compressor, open source" />
+  <meta name="author" content="Murali and Anya" />
+  <meta name="creator" content="Murali and Anya" />
+  <meta name="publisher" content="Murali and Anya" />
+  <meta name="application-name" content="Image Size Reducer" />
+  <meta name="generator" content="SvelteKit" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="English" />
+  <meta name="category" content="Utilities" />
+  <meta name="coverage" content="Worldwide" />
+  <link rel="author" href={REPO} />
+
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Image Size Reducer" />
+  <meta property="og:title" content={TITLE} />
+  <meta property="og:description" content={DESC} />
+  <meta property="og:image" content="/logo.png" />
+  <meta property="og:image:alt" content="Image Size Reducer logo" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={TITLE} />
+  <meta name="twitter:description" content={DESC} />
+  <meta name="twitter:image" content="/logo.png" />
+  <meta name="twitter:image:alt" content="Image Size Reducer logo" />
+  <meta name="twitter:creator" content="Murali and Anya" />
 </svelte:head>
 
 <header class="sticky top-0 z-20 border-b border-line/70 bg-bg/70 backdrop-blur-xl">

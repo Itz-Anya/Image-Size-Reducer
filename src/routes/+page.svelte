@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { queue, type Item, type Preset } from '$lib/queue.svelte';
   import { formatBytes, reduction } from '$lib/utils';
-  import { Plus, ImagePlus, Download, Trash2, RotateCw, X, ShieldCheck, Layers, Lock, SlidersHorizontal, FileImage, Scale, Archive, Loader, Search } from 'lucide-svelte';
+  import { Plus, ImagePlus, Download, Trash2, RotateCw, X, ShieldCheck, Layers, Lock, SlidersHorizontal, FileImage, Scale, Archive, Loader, Search, Github } from 'lucide-svelte';
 
   const REPO = 'https://github.com/Itz-Anya/Image-Size-Reducer';
   const presets: [Preset, string, string][] = [
@@ -46,6 +46,11 @@
   const working = $derived(finished < total);
   const saved = $derived(queue.originalDone - queue.outputDone);
   const clearAll = () => (total > 10 ? (confirmClear = true) : queue.clear());
+
+  const creators = [
+    { name: '𝜜ɴყꫝㅤ𓆩💗𓆪', img: 'https://random-images-anya.vercel.app/anya', url: 'https://github.com/itz-Anya', handle: 'itz-Anya' },
+    { name: '𝐌 𝐔 𝐑 𝚨 𝐋 𝐈 𓂃ִֶָ⋆.˚', img: 'https://itz-murali-images.vercel.app/api', url: 'https://github.com/Itz-Murali', handle: 'Itz-Murali' }
+  ] as const;
 
   const features = [
     [Layers, 'Batch compression', 'Drop in a whole folder. A queue works through them three at a time.'],
@@ -221,6 +226,19 @@
     <div id="privacy" class="mt-10 max-w-2xl scroll-mt-24">
       <h3 class="font-display font-semibold">Privacy</h3>
       <p class="mt-2 text-sm text-mute">Images are read and compressed on your device with the Canvas API in a Web Worker. They are never uploaded and their contents are not stored. Only your theme and compression settings are kept in your browser's local storage.</p>
+    </div>
+  </section>
+  <section id="creators" class="scroll-mt-24 pt-24">
+    <h2 class="font-display text-2xl font-semibold tracking-tight">Creators</h2>
+    <p class="mt-2 text-sm text-mute">Built and maintained by two people who like fast, private tools.</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {#each creators as c}
+        <article class="rounded-3xl border border-line bg-surface p-6 text-center shadow-soft">
+          <img src={c.img} alt="Avatar of {c.handle}" loading="lazy" class="mx-auto w-full max-w-64 rounded-2xl bg-sunken" />
+          <h3 class="font-display mt-5 text-lg font-semibold">{c.name}</h3>
+          <a href={c.url} target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-mute hover:text-ink"><Github size={15} /> {c.handle}</a>
+        </article>
+      {/each}
     </div>
   </section>
 </div>

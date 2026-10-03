@@ -3,8 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="%sveltekit.assets%/logo.png" />
-    <meta name="theme-color" content="#f5f6f8" />
+    <link rel="icon" type="image/png" href="%sveltekit.assets%/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/logo.png" />
+    <link rel="shortcut icon" href="%sveltekit.assets%/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/logo.png" />
+    <link rel="mask-icon" href="%sveltekit.assets%/logo.png" color="#5b4bf5" />
+    <meta name="theme-color" content="#f6f6fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c12" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="msapplication-TileImage" content="%sveltekit.assets%/logo.png" />
+    <meta name="msapplication-TileColor" content="#5b4bf5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Image Size Reducer" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
     <script>
       try {
         var t = JSON.parse(localStorage.getItem('isr:theme') || 'null');
