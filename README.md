@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="static/logo.png" alt="Image Size Reducer logo" width="110" />
+<img src="static/logo.png" alt="Image Size Reducer logo" width="80%" />
 
 # Image Size Reducer
 
